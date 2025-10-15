@@ -17,6 +17,8 @@ public class MapMaker : EditorWindow
 
   private GUIStyle empty;
 
+  Vector2 nodePos;
+
   [MenuItem("Window/MapMaker")]
   private static void OpenWindow()
   {
@@ -45,7 +47,9 @@ public class MapMaker : EditorWindow
 
         for(int j = 0; j < 10; j++)
         {
-           nodes[i].Add(new Node(Vector2.zero, 30,30, empty));
+          nodePos.Set(i * 30, j * 30);
+
+          nodes[i].Add(new Node(nodePos, 30,30, empty));
         }
     }
   }
@@ -54,7 +58,7 @@ public class MapMaker : EditorWindow
   {
     
     DrawGrid();
-    
+    DrawNodes();
     ProcessGrid(Event.current);
 
     if(GUI.changed)
@@ -62,7 +66,7 @@ public class MapMaker : EditorWindow
         Repaint();
     }
   }
-  
+
   private void ProcessGrid(Event E)
   {
     
@@ -80,6 +84,17 @@ public class MapMaker : EditorWindow
         break;
     }
 
+  }
+
+  private void DrawNodes()
+  {
+    for(int i =0; i < 20; i++)
+    {
+        for(int j = 0; j < 10; j++)
+        {
+            nodes[i][j].Draw();
+        }
+    }
   }
 
   private void OnMouseDrag(Vector2 Delta)
