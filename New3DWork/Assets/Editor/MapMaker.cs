@@ -101,6 +101,14 @@ public class MapMaker : EditorWindow
   {
     drag = Delta;
 
+   for(int i =0; i < 20; i++)
+   {
+    for(int j = 0; j < 10; j++)
+    {
+      nodes[i][j].Drag(Delta);
+    }
+   }
+
     GUI.changed = true;
   }
 
