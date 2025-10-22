@@ -7,7 +7,7 @@ public class Node : MonoBehaviour
    
     private Rect rect;
 
-    private GUIStyle style;
+    public GUIStyle style;
 
     public Node(Vector2 Position, float Width, float Height, GUIStyle DefaultStyle)
     {

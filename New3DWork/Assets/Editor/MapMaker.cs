@@ -17,7 +17,15 @@ public class MapMaker : EditorWindow
 
   private GUIStyle empty;
 
-  Vector2 nodePos;
+  private Vector2 nodePos;
+
+  private StyleManager styleManager;
+
+  private bool isErasing;
+
+  private Rect menuBar;
+
+  private GUIStyle currentStyle;
 
   [MenuItem("Window/MapMaker")]
   private static void OpenWindow()
@@ -28,6 +36,8 @@ public class MapMaker : EditorWindow
 
   private void OnEnable()
   {
+    SetUpStyles();
+
     empty = new GUIStyle();
 
     Texture2D icon = Resources.Load("IconText/Empty") as Texture2D;
@@ -35,6 +45,28 @@ public class MapMaker : EditorWindow
     empty.normal.background = icon;
 
     SetUpNodes();
+
+    currentStyle = styleManager.buttonStyles[1].nodeStyle;
+  }
+
+  private void SetUpStyles()
+  {
+
+    try 
+    {
+      styleManager = GameObject.FindGameObjectWithTag("StyleManager").GetComponent<StyleManager>();
+    
+      for(int i =0; i < styleManager.buttonStyles.Length; i++)
+      {
+        styleManager.buttonStyles[i].nodeStyle = new GUIStyle();
+        styleManager.buttonStyles[i].nodeStyle.normal.background = styleManager.buttonStyles[i].icon;
+      }
+    }
+    catch(Exception e)
+    {
+
+    }
+    
   }
 
   private void SetUpNodes()
@@ -59,11 +91,86 @@ public class MapMaker : EditorWindow
     
     DrawGrid();
     DrawNodes();
+    DrawMenuBar();
+    ProcessNodes(Event.current);
     ProcessGrid(Event.current);
 
     if(GUI.changed)
     {
         Repaint();
+    }
+
+  }
+
+  private void DrawMenuBar()
+  {
+    menuBar = new Rect(0,0,position.width, 20);
+    GUILayout.BeginArea(menuBar, EditorStyles.toolbar);
+
+    GUILayout.BeginHorizontal();
+
+    for(int i =0; i < styleManager.buttonStyles.Length; i++)
+    {
+      if(GUILayout.Toggle((currentStyle == styleManager.buttonStyles[i].nodeStyle), 
+      new GUIContent(styleManager.buttonStyles[i].buttonText), 
+    EditorStyles.toolbarButton, GUILayout.Width(80)))
+    {
+      currentStyle = styleManager.buttonStyles[i].nodeStyle;
+    }
+    }
+
+    GUILayout.EndHorizontal();
+
+    GUILayout.EndArea();
+  }
+
+  private void ProcessNodes(Event e)
+  {
+    int row = (int)((e.mousePosition.x - offset.x) / 30);
+    int col = (int)((e.mousePosition.y - offset.y) / 30);
+
+    if((e.mousePosition.x - offset.x) < 0 || (e.mousePosition.x - offset.x) > 600
+    || (e.mousePosition.y - offset.y) < 0 || (e.mousePosition.y - offset.y) > 300)
+    {
+
+    }
+    else
+    {
+      if(e.type == EventType.MouseDown)
+      {
+
+        if(nodes[row][col].style.normal.background.name == "Empty")
+        {
+          isErasing = false;
+        }
+        else
+        {
+          isErasing = true;
+        }
+        PaintNodes(row, col);
+      }
+
+        if(e.type == EventType.MouseDrag)
+        {  
+           PaintNodes(row, col);
+           e.Use();
+        }
+    }
+
+    
+  }
+
+  private void PaintNodes(int Row, int Col)
+  {
+    if(isErasing)
+    {
+      nodes[Row][Col].SetStyle(empty);
+      GUI.changed = true;
+    }
+    else
+    {
+      nodes[Row][Col].SetStyle(currentStyle);
+      GUI.changed = true;
     }
   }
 

@@ -10,6 +10,8 @@ public struct ButtonStyle
 
     [HideInInspector]
     public GUIStyle nodeStyle;
+
+    public GameObject prefabObject;
 }
 
 public class StyleManager : MonoBehaviour
