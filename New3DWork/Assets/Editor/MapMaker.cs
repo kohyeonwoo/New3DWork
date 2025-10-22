@@ -15,6 +15,8 @@ public class MapMaker : EditorWindow
 
   private List<List<Node>> nodes;
 
+   private List<List<PartScripts>> parts;
+
   private GUIStyle empty;
 
   private Vector2 nodePos;
@@ -27,6 +29,8 @@ public class MapMaker : EditorWindow
 
   private GUIStyle currentStyle;
 
+  private GameObject theMap;
+
   [MenuItem("Window/MapMaker")]
   private static void OpenWindow()
   {
@@ -37,16 +41,45 @@ public class MapMaker : EditorWindow
   private void OnEnable()
   {
     SetUpStyles();
+    SetUpNodesAndParts();
+    SetUpMap(); 
+  }
 
-    empty = new GUIStyle();
+  private void SetUpMap()
+  {
 
-    Texture2D icon = Resources.Load("IconText/Empty") as Texture2D;
+    try 
+    { 
+      theMap = GameObject.FindGameObjectWithTag("Map"); 
+      RestoreTheMap(theMap);
+    } 
+    catch (Exception e) {}
+  
+    if(theMap == null)
+    {
+      theMap = new GameObject("Map");
+      theMap.tag = "Map";
+    }
 
-    empty.normal.background = icon;
+  }
 
-    SetUpNodes();
-
-    currentStyle = styleManager.buttonStyles[1].nodeStyle;
+  private void RestoreTheMap(GameObject TheMap)
+  {
+      if(theMap.transform.childCount > 0)
+      {
+        for(int i =0; i < theMap.transform.childCount; i++)
+        {
+          int ii = theMap.transform.GetChild(i).GetComponent<PartScripts>().row;
+          int jj = theMap.transform.GetChild(i).GetComponent<PartScripts>().column;
+          GUIStyle theStyle = theMap.transform.GetChild(i).GetComponent<PartScripts>().style;
+          nodes[ii][jj].SetStyle(theStyle);
+          parts[ii][jj] = theMap.transform.GetChild(i).GetComponent<PartScripts>().style;
+          parts[ii][jj].part = theMap.transform.GetChild(i).gameObject;
+          parts[ii][jj].name = theMap.transform.GetChild(i).name;
+          parts[ii][jj].row = ii;
+          parts[ii][jj].column = jj;
+        }
+      }
   }
 
   private void SetUpStyles()
@@ -64,24 +97,33 @@ public class MapMaker : EditorWindow
     }
     catch(Exception e)
     {
-
     }
+    
+    empty = styleManager.buttonStyles[0].nodeStyle;
+    currentStyle = styleManager.buttonStyles[1].nodeStyle;
     
   }
 
-  private void SetUpNodes()
+  private void SetUpNodesAndParts()
   {
+
     nodes = new List<List<Node>>();
+
+    parts = new List<List<PartScripts>>();
 
     for(int i =0; i < 20; i++)
     {
         nodes.Add(new List<Node>());
+
+        parts.Add(new List<PartScripts>());
 
         for(int j = 0; j < 10; j++)
         {
           nodePos.Set(i * 30, j * 30);
 
           nodes[i].Add(new Node(nodePos, 30,30, empty));
+
+          parts[i].Add(null);
         }
     }
   }
@@ -164,13 +206,32 @@ public class MapMaker : EditorWindow
   {
     if(isErasing)
     {
-      nodes[Row][Col].SetStyle(empty);
-      GUI.changed = true;
+      if(parts[Row][Col] != null)
+      {
+          nodes[Row][Col].SetStyle(empty);
+          DestroyImmediate(parts[Row][Col].gameObject);
+          GUI.changed = true;
+      }  
+      parts[Row][Col] = null;
     }
     else
     {
-      nodes[Row][Col].SetStyle(currentStyle);
-      GUI.changed = true;
+      if(parts[Row][Col] == null)
+      {
+        nodes[Row][Col].SetStyle(currentStyle);
+        GameObject g = Instantiate(Resources.Load("MapParts/" + currentStyle.normal.background.name)) as GameObject;
+        g.name = currentStyle.normal.background.name;
+        g.transform.position = new Vector3(Col * 10, 0, Row * 10) + 
+        Vector3.forward * 5 + Vector3.right * 5;
+        g.transform.parent = theMap.transform;
+        parts[Row][Col] = g.GetComponent<PartScripts>();
+        parts[Row][Col].part = g;
+        parts[Row][Col].name = g.name;
+        parts[Row][Col].row = Row;
+        parts[Row][Col].column = Col;
+        parts[Row][Col].style = currentStyle;
+        GUI.changed = true;
+      }
     }
   }
 

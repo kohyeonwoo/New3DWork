@@ -119,6 +119,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &633487517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 633487518}
+  m_Layer: 0
+  m_Name: Map
+  m_TagString: Map
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &633487518
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633487517}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &699674555
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,37 +200,37 @@ MonoBehaviour:
     nodeStyle:
       m_Name: 
       m_Normal:
-        m_Background: {fileID: 0}
+        m_Background: {fileID: 2800000, guid: 344be266899ca424f86df42f28d3844b, type: 3}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_Hover:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_Active:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_Focused:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_OnNormal:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_OnHover:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_OnActive:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_OnFocused:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_Border:
         m_Left: 0
         m_Right: 0
@@ -225,50 +256,51 @@ MonoBehaviour:
       m_FontStyle: 0
       m_Alignment: 0
       m_WordWrap: 0
-      m_RichText: 0
+      m_RichText: 1
       m_TextClipping: 0
       m_ImagePosition: 0
       m_ContentOffset: {x: 0, y: 0}
       m_FixedWidth: 0
       m_FixedHeight: 0
-      m_StretchWidth: 0
+      m_StretchWidth: 1
       m_StretchHeight: 0
+    prefabObject: {fileID: 0}
   - icon: {fileID: 2800000, guid: a27f0b7c99b50f5458755752b0add59d, type: 3}
     buttonText: Enemy1
     nodeStyle:
       m_Name: 
       m_Normal:
-        m_Background: {fileID: 0}
+        m_Background: {fileID: 2800000, guid: a27f0b7c99b50f5458755752b0add59d, type: 3}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_Hover:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_Active:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_Focused:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_OnNormal:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_OnHover:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_OnActive:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_OnFocused:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_Border:
         m_Left: 0
         m_Right: 0
@@ -294,50 +326,51 @@ MonoBehaviour:
       m_FontStyle: 0
       m_Alignment: 0
       m_WordWrap: 0
-      m_RichText: 0
+      m_RichText: 1
       m_TextClipping: 0
       m_ImagePosition: 0
       m_ContentOffset: {x: 0, y: 0}
       m_FixedWidth: 0
       m_FixedHeight: 0
-      m_StretchWidth: 0
+      m_StretchWidth: 1
       m_StretchHeight: 0
+    prefabObject: {fileID: 7076029219765752721, guid: e9bda2d22e22f5444a121ed759063659, type: 3}
   - icon: {fileID: 2800000, guid: 8fb7afd7a3efc544b999f670a898636c, type: 3}
     buttonText: Enemy2
     nodeStyle:
       m_Name: 
       m_Normal:
-        m_Background: {fileID: 0}
+        m_Background: {fileID: 2800000, guid: 8fb7afd7a3efc544b999f670a898636c, type: 3}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_Hover:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_Active:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_Focused:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_OnNormal:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_OnHover:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_OnActive:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_OnFocused:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_Border:
         m_Left: 0
         m_Right: 0
@@ -363,50 +396,51 @@ MonoBehaviour:
       m_FontStyle: 0
       m_Alignment: 0
       m_WordWrap: 0
-      m_RichText: 0
+      m_RichText: 1
       m_TextClipping: 0
       m_ImagePosition: 0
       m_ContentOffset: {x: 0, y: 0}
       m_FixedWidth: 0
       m_FixedHeight: 0
-      m_StretchWidth: 0
+      m_StretchWidth: 1
       m_StretchHeight: 0
+    prefabObject: {fileID: 7076029219765752721, guid: c82458732fbfbc745802a429d4c31b59, type: 3}
   - icon: {fileID: 2800000, guid: 0282a58fd028df04d8e36bb3d0c6a58d, type: 3}
     buttonText: Enemy3
     nodeStyle:
       m_Name: 
       m_Normal:
-        m_Background: {fileID: 0}
+        m_Background: {fileID: 2800000, guid: 0282a58fd028df04d8e36bb3d0c6a58d, type: 3}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_Hover:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_Active:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_Focused:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_OnNormal:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_OnHover:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_OnActive:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_OnFocused:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_Border:
         m_Left: 0
         m_Right: 0
@@ -432,50 +466,51 @@ MonoBehaviour:
       m_FontStyle: 0
       m_Alignment: 0
       m_WordWrap: 0
-      m_RichText: 0
+      m_RichText: 1
       m_TextClipping: 0
       m_ImagePosition: 0
       m_ContentOffset: {x: 0, y: 0}
       m_FixedWidth: 0
       m_FixedHeight: 0
-      m_StretchWidth: 0
+      m_StretchWidth: 1
       m_StretchHeight: 0
+    prefabObject: {fileID: 7076029219765752721, guid: 09faab27333601644a2378d161f43a39, type: 3}
   - icon: {fileID: 2800000, guid: eebb5cdaf19190544b0576072cea572e, type: 3}
     buttonText: Obstacle
     nodeStyle:
       m_Name: 
       m_Normal:
-        m_Background: {fileID: 0}
+        m_Background: {fileID: 2800000, guid: eebb5cdaf19190544b0576072cea572e, type: 3}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_Hover:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_Active:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_Focused:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_OnNormal:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_OnHover:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_OnActive:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_OnFocused:
         m_Background: {fileID: 0}
         m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 0}
+        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
       m_Border:
         m_Left: 0
         m_Right: 0
@@ -501,14 +536,15 @@ MonoBehaviour:
       m_FontStyle: 0
       m_Alignment: 0
       m_WordWrap: 0
-      m_RichText: 0
+      m_RichText: 1
       m_TextClipping: 0
       m_ImagePosition: 0
       m_ContentOffset: {x: 0, y: 0}
       m_FixedWidth: 0
       m_FixedHeight: 0
-      m_StretchWidth: 0
+      m_StretchWidth: 1
       m_StretchHeight: 0
+    prefabObject: {fileID: 6566271772987341969, guid: 7e9dad8dfa3236b4e981f0a95d0dcbee, type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,3 +737,4 @@ SceneRoots:
   - {fileID: 963194228}
   - {fileID: 705507995}
   - {fileID: 699674556}
+  - {fileID: 633487518}
