@@ -73,7 +73,7 @@ public class MapMaker : EditorWindow
           int jj = theMap.transform.GetChild(i).GetComponent<PartScripts>().column;
           GUIStyle theStyle = theMap.transform.GetChild(i).GetComponent<PartScripts>().style;
           nodes[ii][jj].SetStyle(theStyle);
-          parts[ii][jj] = theMap.transform.GetChild(i).GetComponent<PartScripts>().style;
+          //parts[ii][jj] = theMap.transform.GetChild(i).GetComponent<PartScripts>().style;
           parts[ii][jj].part = theMap.transform.GetChild(i).gameObject;
           parts[ii][jj].name = theMap.transform.GetChild(i).name;
           parts[ii][jj].row = ii;
