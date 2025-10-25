@@ -34,9 +34,9 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         rigid.velocity = new Vector3(joystick.Horizontal * moveSpeed,
-            rigid.velocity.y, joystick.Vertical * moveSpeed);
+           rigid.velocity.y, joystick.Vertical * moveSpeed);
 
-        if(joystick.Horizontal != 0 || joystick.Vertical != 0)
+        if (joystick.Horizontal != 0 || joystick.Vertical != 0)
         {
             this.transform.rotation = Quaternion.LookRotation(rigid.velocity);
 
