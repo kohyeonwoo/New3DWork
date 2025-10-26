@@ -5,9 +5,14 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+
     public float maxHealth;
 
     public float currentHealth;
+
+    public float speed;
+
+    private bool bLive;
 
     public Transform target;
 
@@ -17,18 +22,21 @@ public class Enemy : MonoBehaviour
 
     private NavMeshAgent nav;
 
+
     private void Start()
     {
         rigid = this.GetComponent<Rigidbody>();
 
         animator = this.GetComponent<Animator>();
 
-        nav = this.GetComponent<NavMeshAgent>();    
+        nav = this.GetComponent<NavMeshAgent>();
     }
 
     private void OnEnable()
     {
         maxHealth = currentHealth;
+
+        bLive = true;
 
         target = GameObject.FindGameObjectWithTag("Player").transform;
     }
@@ -36,6 +44,14 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         Chase();
+    }
+
+    private void FixedUpdate()
+    {
+        if(!bLive)
+        {
+            return;
+        }
     }
 
     private void Chase()
