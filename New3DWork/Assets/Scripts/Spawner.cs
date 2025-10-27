@@ -5,8 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class SpawnData
 {
-    public int unitType;
     public float spawnTime;
+    public int unitType;
     public int health;
     public float speed;
 }
@@ -34,9 +34,9 @@ public class Spawner : MonoBehaviour
 
         //level = Mathf.Min(Mathf.FloorToInt(GameManager.Instance.gameTime / 10.0f), spawnData.Length - 1);
 
-        level = Mathf.FloorToInt(GameManager.Instance.gameTime / 10.0f);
+        level = Mathf.Min(Mathf.FloorToInt(GameManager.Instance.gameTime / 10.0f), spawnData.Length - 1);
 
-        if (timer > (level == 0 ? 0.5f : 0.2f))
+        if (timer > spawnData[level].spawnTime)
         {
             timer = 0.0f;
             Spawn();
@@ -46,8 +46,9 @@ public class Spawner : MonoBehaviour
 
     private void Spawn()
     {
-        GameObject enemy = GameManager.Instance.pool.Get(level);
+        GameObject enemy = GameManager.Instance.pool.Get(0);
         enemy.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length)].position;
+        enemy.GetComponent<Enemy>().Init(spawnData[level]);
     }
 
 }

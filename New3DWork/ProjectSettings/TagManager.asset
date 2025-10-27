@@ -6,6 +6,7 @@ TagManager:
   tags:
   - StyleManager
   - Map
+  - Bullet
   layers:
   - Default
   - TransparentFX

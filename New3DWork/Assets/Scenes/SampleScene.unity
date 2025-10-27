@@ -8353,7 +8353,15 @@ MonoBehaviour:
   - {fileID: 1085006560}
   - {fileID: 850800872}
   - {fileID: 197162178}
-  spawnData: []
+  spawnData:
+  - spawnTime: 0.7
+    unitType: 0
+    health: 2
+    speed: 1
+  - spawnTime: 0.5
+    unitType: 1
+    health: 3
+    speed: 2
 --- !u!1 &1223399847
 GameObject:
   m_ObjectHideFlags: 0
@@ -9958,7 +9966,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs:
-  - {fileID: 6688334146486468909, guid: bf09f4f835f825b4c85d236a221295af, type: 3}
   - {fileID: 6688334146486468909, guid: bf09f4f835f825b4c85d236a221295af, type: 3}
 --- !u!1 &1802188557
 GameObject:

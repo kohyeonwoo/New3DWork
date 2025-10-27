@@ -60,4 +60,12 @@ public class Enemy : MonoBehaviour
 
         animator.SetBool("bMove", true);
     }
+
+    public void Init(SpawnData Data)
+    {
+        maxHealth = Data.health;
+        speed = Data.speed;
+        currentHealth = Data.health;
+    }
+
 }

@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public float attackPoint;
+
+    public int penetratePoint;
+
+    public void Init(float AttackPoint, int PenetratePoint)
     {
-        
+        this.attackPoint = AttackPoint;
+        this.penetratePoint = PenetratePoint;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
