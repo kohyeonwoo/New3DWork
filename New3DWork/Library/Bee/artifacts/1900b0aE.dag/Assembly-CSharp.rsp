@@ -403,6 +403,7 @@
 "Assets/Scripts/PoolManager.cs"
 "Assets/Scripts/Spawner.cs"
 "Assets/Scripts/StyleManager.cs"
+"Assets/Scripts/Weapon.cs"
 "Assets/UnitAssets/Joystick Pack/Scripts/Base/Joystick.cs"
 "Assets/UnitAssets/Joystick Pack/Scripts/Joysticks/DynamicJoystick.cs"
 "Assets/UnitAssets/Joystick Pack/Scripts/Joysticks/FixedJoystick.cs"

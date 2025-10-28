@@ -68,4 +68,30 @@ public class Enemy : MonoBehaviour
         currentHealth = Data.health;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        
+        if(!other.CompareTag("Bullet"))
+        {
+            return;
+        }
+
+        currentHealth -= other.GetComponent<Bullet>().attackPoint;
+        
+        if(currentHealth > 0)
+        {
+
+        }
+        else
+        {
+            Dead();
+        }
+
+    }
+
+    private void Dead()
+    {
+        this.gameObject.SetActive(false);   
+    }
+
 }
